@@ -1,0 +1,27 @@
+{
+  "name": "teams-generator",
+  "version": "1.0.0",
+  "description": "A dynamically populating team generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vi3t4lov3/Teams-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vi3t4lov3/Teams-Generator/issues"
+  },
+  "homepage": "https://github.com/vi3t4lov3/Teams-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
+  }
+}
