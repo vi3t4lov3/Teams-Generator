@@ -54,14 +54,6 @@ function renderInterns(interns) {
   });
   return markup.join("");
 }
-// function generateTeam(teamMembers) {
-//   return `
-//         ${renderManager(teamMembers.manager)}
-//         ${renderEngineers(teamMembers.engineers)}
-//         ${renderInterns(teamMembers.interns)}
-//     `;
-// }
-
 function render ({manager,engineers,interns} ) {
   return `
   
