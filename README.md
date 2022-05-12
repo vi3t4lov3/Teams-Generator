@@ -1,6 +1,6 @@
 # Team Generator
 
-https://github.com/vi3t4lov3/Professional-README-Generator
+https://github.com/vi3t4lov3/Teams-Generator
 
 ## Description
 
@@ -65,9 +65,11 @@ THEN I exit the application, and the HTML is generated
 5. Create new Pull Request
 
 ## Tests
+
 ```
 npm run test
 ```
+
 ## Demo
 
 [Click here] (https://github.com/vi3t4lov3/Teams-Generator)
@@ -77,6 +79,7 @@ npm run test
 ![imagename](./src/01.gif)
 
 ![imagename](./src/demo.png)
+
 ## Questions
 
 If you have questions about this repository reach me by Github: [vi3t4lov3](https://github.com/vi3t4lov3)
