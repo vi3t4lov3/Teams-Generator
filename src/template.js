@@ -1,26 +1,27 @@
 function renderManager(manager) {
   return `
-  <div class="card employee-card">
-  <div class="card-header">
-      <h2 class="card-title">${manager.getName()}</h2>
-      <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
-  </div>
-  <div class="card-body">
-      <ul class="list-group">
-          <li class="list-group-item">ID: ${manager.getId()}</li>
-          <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-          <li class="list-group-item">Office number: ${manager.getOffice()}</li>
-      </ul>
-  </div>
-</div>
+  <div class="card employee-card m-2" style="width: 300px">
+      <div class="card-header bg-danger">
+          <h2 class="card-title text-center">${manager.getName()}</h2>
+          <h3 class="card-title text-center"><i class="bi bi-person"></i>${manager.getRole()}</h3>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">ID: ${manager.getId()}</li>
+              <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+              <li class="list-group-item">Office number: ${manager.getOffice()}</li>
+          </ul>
+      </div>
+  </div>    
   `;
 }
 function renderEngineers(engineers) {
   const markup = engineers.map((engineer) => {
-    return `<div class="card employee-card">
-      <div class="card-header">
-          <h2 class="card-title">${engineer.getName()}</h2>
-          <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
+    return `
+    <div class="card employee-card m-2" style="width: 300px">
+      <div class="card-header bg-success">
+          <h2 class="card-title text-center">${engineer.getName()}</h2>
+          <h3 class="card-title text-center"><i class="bi bi-person-check"></i>${engineer.getRole()}</h3>
       </div>
       <div class="card-body">
           <ul class="list-group">
@@ -32,37 +33,38 @@ function renderEngineers(engineers) {
   </div>
       `;
   });
-  return markup.join(",");
+  return markup.join("");
 }
 function renderInterns(interns) {
   const markup = interns.map((intern) => {
     return `
-        <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${intern.getName()}</h2>
-        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${intern.getId()}</li>
-            <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-            <li class="list-group-item">School: ${intern.getSchool()}</li>
-        </ul>
-    </div>
-</div>`;
+    <div class="card employee-card m-2" style="width: 300px">
+      <div class="card-header bg-warning">
+          <h2 class="card-title text-center">${intern.getName()}</h2>
+          <h3 class="card-title text-center"><i class="bi bi-person-plus"></i>${intern.getRole()}</h3>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">ID: ${intern.getId()}</li>
+              <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+              <li class="list-group-item">School: ${intern.getSchool()}</li>
+          </ul>
+      </div>
+    </div>`;
   });
-  return markup.join(",");
+  return markup.join("");
 }
-function generateTeam(teamMembers) {
-  return `
-        ${renderManager(teamMembers.manager)}
-        ${renderEngineers(teamMembers.engineers)}
-        ${renderInterns(teamMembers.interns)}
-    `;
-}
+// function generateTeam(teamMembers) {
+//   return `
+//         ${renderManager(teamMembers.manager)}
+//         ${renderEngineers(teamMembers.engineers)}
+//         ${renderInterns(teamMembers.interns)}
+//     `;
+// }
 
-function render (teamMembers) {
+function render ({manager,engineers,interns} ) {
   return `
+  
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,28 +82,27 @@ function render (teamMembers) {
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
     <nav class="bg-primary text-center py-5">
-        
-          <h1>Welcome To My Team</h1>
-      </nav>
-    
-      <div class="container my-5">
-        <div class="row">
-          <div class="col">
-          ${generateTeam(teamMembers)}
-          </div>
-          <div class="col">
+        <h1>Welcome To My Team</h1>
+    </nav>
+    <div class="custom">
 
-          </div>
-          <div class="col">
-
-          </div>
+        <div class="column-container">
+            ${renderManager(manager)} 
         </div>
-      </div>
 
-
+        <div class="column-container ">
+            ${renderEngineers(engineers)}
+        </div>
+        
+        <div class="column-container">
+            ${renderInterns(interns)}
+        </div>
+        
+    </div>
 </body>
 </html>
   `

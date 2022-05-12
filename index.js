@@ -6,7 +6,7 @@ const Engineer = require("./lib/Engineer");
 const engineerInfo = require("./src/EngineerInfo");
 const Intern = require("./lib/Intern");
 const internInfo = require("./src/InternInfo");
-const render = require('./src/template');
+const render = require('./src/Template');
 const teamMembers = {
     manager: null,
     engineers: [],
@@ -55,7 +55,7 @@ function createTeam() {
 }
 //builteam
 function buildTeam() {
-    fs.writeFile("dist/team.html", render(teamMembers), (err) => {
+    fs.writeFile("dist/TeamMembers.html", render(teamMembers), (err) => {
     if (err) {
         console.log(err);
     }
