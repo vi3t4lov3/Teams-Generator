@@ -72,7 +72,7 @@ npm run test
 
 ## Demo
 
-[Click here] (https://github.com/vi3t4lov3/Teams-Generator)
+[Click here] (https://vi3t4lov3.github.io/Teams-Generator/)
 
 [Click here] (https://youtu.be/n4YY_3uE4e8)
 
